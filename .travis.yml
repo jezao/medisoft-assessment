@@ -11,6 +11,7 @@ before_script:
 
 script:
   - phpunit
+  - vendor/bin/phpcs app  -p  --colors  --standard=PSR2
 
 notifications:
   email: false
