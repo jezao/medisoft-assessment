@@ -12,6 +12,10 @@
 */
 
 Route::get('/', function () {
+    return view('home');
+});
+
+Route::get('/poker', function () {
     return view('poker');
 });
 

@@ -12,3 +12,6 @@ yarn-error.log
 /coverage
 /.idea
 *.log
+/public/css
+/public/js
+/public/mix-manifest.json
