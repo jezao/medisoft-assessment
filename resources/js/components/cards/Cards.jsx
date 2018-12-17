@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Card from './card'
+import Card from './Card'
 
 const Cards = props => {
 
