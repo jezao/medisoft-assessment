@@ -1,9 +1,16 @@
-deploy:
-  provider: heroku
-  api_key:
-    production: 74f36da6-9eb4-44be-a126-5bf6a8ce05ab
-  app:
-    production: medisoft-assessment
-  run:
-      - "rake db:migrate"
-      - "rake cleanup"
+language: php
+
+php:
+  - 7.1
+
+before_script:
+  - cp .env.example .env
+  - composer self-update
+  - composer install --prefer-source --no-interaction --dev
+  - php artisan key:generate
+
+script:
+  - phpunit
+
+notifications:
+  email: false
