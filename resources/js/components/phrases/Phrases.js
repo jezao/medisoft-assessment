@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios'
 
+import Pace from 'react-pace-progress'
+
+
 import TextInput from './TextInput'
 import Chars from './Chars'
 
@@ -16,12 +19,17 @@ export default class Phrases extends Component {
 
         this.state = {
             phrase: 'Soccer vs Football',
-            chars: []
+            chars: [],
+            isLoading: false
         }
     }
 
     handleKeyPress(e) {
         if (e.key === 'Enter') {
+            this.setState({
+                ...this.state,
+                isLoading:false
+            });
             this.getPhraseInfo(this.state.phrase)
         }
     }
@@ -38,7 +46,8 @@ export default class Phrases extends Component {
         axios.post('/analyze', {phrase: phrase}).then(resp => {
             this.setState({
                 ...this.state,
-                chars: resp.data
+                chars: resp.data,
+                isLoading:false
             });
             console.log("STATE=",this.state.chars)
         });
@@ -47,6 +56,7 @@ export default class Phrases extends Component {
     render() {
         return (
             <div>
+                {this.state.isLoading ? <Pace color="#000"/> : null}
 
                 <TextInput handleChange={this.handleChange}
                            handleKeyPress={this.handleKeyPress}

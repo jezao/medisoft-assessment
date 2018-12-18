@@ -34,9 +34,9 @@
 
 
 <div class="center-div">
-    <a href="/poker" class="btn btn-primary btn-block ">Cards Odds</a>
+    <a href="/poker" class="btn btn-primary btn-block ">Cards</a>
     <BR>
-    <a href="/phrase" class="btn btn-primary btn-block ">Phrase Analyzer</a>
+    <a href="/phrase" class="btn btn-primary btn-block ">Phrase</a>
 </div>
 
 </body>
