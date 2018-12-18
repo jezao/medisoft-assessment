@@ -28,7 +28,7 @@ export default class Phrases extends Component {
         if (e.key === 'Enter') {
             this.setState({
                 ...this.state,
-                isLoading:false
+                isLoading:true
             });
             this.getPhraseInfo(this.state.phrase)
         }
@@ -55,7 +55,7 @@ export default class Phrases extends Component {
 
     render() {
         return (
-            <div>
+            <div className={`container`}>
                 {this.state.isLoading ? <Pace color="#000"/> : null}
 
                 <TextInput handleChange={this.handleChange}

@@ -9,6 +9,7 @@ class PhraseService
 
     public function analyze($phrase)
     {
+        sleep(5);
         $arrResult = [];
         $this->arrPhrase = $this->phraseToArray($phrase);
         $countChars = $this->countChars();
