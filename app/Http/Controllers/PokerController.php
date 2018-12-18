@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Rules\CardRange;
 use App\Services\CardService;
 use Illuminate\Http\Request;
 
@@ -27,7 +28,7 @@ class PokerController extends Controller
             [
             'deck' => 'required',
             'turn' => 'required',
-            'card' => 'required'
+            'card' => ['required', new CardRange]
             ]
         );
 
